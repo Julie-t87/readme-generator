@@ -16,7 +16,7 @@ const questions = [
             if (nameInput) {
                 return true;
             } else {
-                console.log('Please enter a project name!');
+                console.log('Please enter a project name');
                 return false;
             }
         }
@@ -24,7 +24,7 @@ const questions = [
     {
         type: 'input',
         name: 'userName',
-        message: 'What is your name?(Required)',
+        message: 'Please enter your name?(Required)',
         validate: nameInput => {
             if (nameInput) {
                 return true;
@@ -37,7 +37,7 @@ const questions = [
     {
         type: 'input',
         name: 'userGithub',
-        message: 'What is your github name?(Required)',
+        message: 'Please enter your github name?(Required)',
         validate: nameInput => {
             if (nameInput) {
                 return true;
@@ -50,7 +50,7 @@ const questions = [
     {
         type: 'input',
         name: 'userEmail',
-        message: 'What is your email?(Required)'
+        message: 'Please enter your email?(Required)'
     },
     {
         type: 'confirm',
@@ -98,7 +98,7 @@ const questions = [
     {
         type: 'input',
         name: 'usage',
-        message: "Please give us any usage instructions"
+        message: "please list any usage instructions"
     },
     {
         type: 'list',
@@ -123,7 +123,7 @@ const questions = [
     {
         type: "input",
         name: "featureList",
-        message: 'Please enter your list of features:',
+        message: 'Please enter your features:',
         when: ({ features }) => {
             if (features) {
                 return true;
@@ -193,18 +193,9 @@ const questions = [
 
 function init() {
 
-    // help with answers to get formatted properly
+    // help with answers to be formatted
 
-    console.log(`
-    Please use \\n to put new lines in your answers
-    for example if you say Stacy\\nJen\\nMike then it will come out as 
-    Stacy
-    Jen
-    Mike
-    Other than that you can use any typical markdown notation
-    `);
-
-    // run async so everything will load in order
+    // runs so everything will load in order
     
     inquirer.prompt(questions)
     .then((markdownData) => {
@@ -226,5 +217,5 @@ function init() {
    
 }
 
-// call to initialize app
+// call for initializing app
 init();
