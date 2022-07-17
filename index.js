@@ -21,28 +21,16 @@ const questions = [
             }
         }
     },
-    {
-        type: 'input',
-        name: 'userName',
-        message: 'Please enter your name?(Required)',
-        validate: nameInput => {
-            if (nameInput) {
-                return true;
-            } else {
-                console.log('Please enter your name');
-                return false;
-            }
-        }
-    },
+
     {
         type: 'input',
         name: 'userGithub',
-        message: 'Please enter your github name?(Required)',
+        message: 'Please enter your github username?(Required)',
         validate: nameInput => {
             if (nameInput) {
                 return true;
             } else {
-                console.log('Please enter your name');
+                console.log('Please enter a valid username');
                 return false;
             }
         }
@@ -51,6 +39,7 @@ const questions = [
         type: 'input',
         name: 'userEmail',
         message: 'Please enter your email?(Required)'
+        
     },
     {
         type: 'confirm',
@@ -73,7 +62,7 @@ const questions = [
     {
         type: 'input',
         name: 'description',
-        message: 'Please enter a description (not required but advised)',
+        message: 'Please enter a description of project (not required but advised)',
         validate: descriptionInput => {
             if (descriptionInput) {
                 return true;
